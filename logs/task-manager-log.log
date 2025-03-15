@@ -1,0 +1,13 @@
+2025-02-22 16:46:00 INFO  Main:35 - saved data reading
+2025-02-22 16:46:00 INFO  Main:40 - application start
+2025-02-22 16:46:00 INFO  Controller:74 - Main controller initializing
+2025-02-22 16:46:09 INFO  NewEditController:89 - new/edit window initializing
+2025-02-22 16:46:36 INFO  NewEditController:89 - new/edit window initializing
+2025-02-22 16:47:33 INFO  NewEditController:89 - new/edit window initializing
+2025-03-16 00:15:57 INFO  Main:35 - saved data reading
+2025-03-16 00:15:57 INFO  Main:40 - application start
+2025-03-16 00:15:57 INFO  Controller:74 - Main controller initializing
+2025-03-16 00:16:10 INFO  NewEditController:89 - new/edit window initializing
+2025-03-16 00:16:58 INFO  NewEditController:89 - new/edit window initializing
+2025-03-16 00:17:01 INFO  NewEditController:89 - new/edit window initializing
+2025-03-16 00:17:37 INFO  TaskInfoController:24 - task info window initializing
