@@ -5,7 +5,7 @@ import javafx.collections.ObservableList;
 import java.util.*;
 
 public class TasksOperations {
-    public ArrayList<Task> tasks;
+    public List<Task> tasks;
 
     public TasksOperations(ObservableList<Task> tasksList){
         tasks=new ArrayList<>();

@@ -33,10 +33,10 @@ public class Controller {
     public static Stage editNewStage;
     public static Stage infoStage;
 
-    public static TableView mainTable;
+    public static TableView<Task> mainTable;
 
     @FXML
-    public  TableView tasks;
+    public  TableView<Task> tasks;
     @FXML
     private TableColumn<Task, String> columnTitle;
     @FXML
@@ -93,7 +93,7 @@ public class Controller {
             NewEditController editCtrl = loader.getController();
             editCtrl.setService(service);
             editCtrl.setTasksList(tasksList);
-            editCtrl.setCurrentTask((Task)mainTable.getSelectionModel().getSelectedItem());
+            editCtrl.setCurrentTask(mainTable.getSelectionModel().getSelectedItem());
             editNewStage.setScene(new Scene(root, 600, 350));
             editNewStage.setResizable(false);
             editNewStage.initOwner(Main.primaryStage);
@@ -106,7 +106,7 @@ public class Controller {
     }
     @FXML
     public void deleteTask(){
-        Task toDelete = (Task)tasks.getSelectionModel().getSelectedItem();
+        Task toDelete = tasks.getSelectionModel().getSelectedItem();
         tasksList.remove(toDelete);
         TaskIO.rewriteFile(tasksList);
     }
