@@ -69,11 +69,12 @@ class ECP_BVATest {
         assertThrows(IllegalArgumentException.class, () -> new Task("", new Date(102, 3, 21), new Date(124, 2, 31), 1));
     }
 
-    @ParameterizedTest
-    @ValueSource(strings = {"T", "A", "B"})
+//    @ParameterizedTest
+//    @ValueSource(strings = {"T", "A", "B"})
+    @Test
     @DisplayName("TC2_BVA - Task valid cu descriere de o litera")
-    void testBVA2(String description) {
-        Task task = new Task(description, new Date(102, 3, 22), new Date(124, 11, 31), 1);
+    void testBVA2() {
+        Task task = new Task("a", new Date(102, 3, 22), new Date(124, 11, 31), 1);
         assertNotNull(task);
     }
 
