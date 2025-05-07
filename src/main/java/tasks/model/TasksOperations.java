@@ -11,18 +11,25 @@ public class TasksOperations {
         tasks=new ArrayList<>();
         tasks.addAll(tasksList);
     }
+    // F02
     public Iterable<Task> incoming(Date start, Date end){
         System.out.println(start);
         System.out.println(end);
         ArrayList<Task> incomingTasks = new ArrayList<>();
-        for (Task t : tasks) {
-            Date nextTime = t.nextTimeAfter(start);
-            if (nextTime != null && (nextTime.before(end) || nextTime.equals(end))) {
-                incomingTasks.add(t);
-                System.out.println(t.getTitle());
+        if (!end.before(start)) {
+            for (Task t : tasks) {
+                Date nextTime = t.nextTimeAfter(start);
+//                System.out.println("NEXT TIME " + nextTime);
+                if (nextTime != null){
+                    if (nextTime.before(end) || nextTime.equals(end)) {
+                        incomingTasks.add(t);
+                        System.out.println(t.getTitle());
+                    }
+                }
             }
         }
         return incomingTasks;
+
     }
     public SortedMap<Date, Set<Task>> calendar( Date start, Date end){
         Iterable<Task> incomingTasks = incoming(start, end);
