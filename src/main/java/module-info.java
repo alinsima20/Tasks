@@ -4,7 +4,8 @@ module tasks {
     requires org.controlsfx.controls;
     requires log4j;
 
-    opens tasks.model to javafx.base;
+//    opens tasks.model to javafx.base;
+    opens tasks.model
     exports tasks.model;
     opens tasks.view to javafx.fxml;
     exports tasks.view;
