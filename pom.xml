@@ -12,18 +12,11 @@
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
-<!--  <properties>-->
-<!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-<!--    <maven.compiler.source>11</maven.compiler.source>-->
-<!--    <maven.compiler.target>11</maven.compiler.target>-->
-<!--    <junit-plaform.version>5.6.0</junit-plaform.version>-->
-<!--  </properties>-->
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <junit.jupiter.version>5.6.0</junit.jupiter.version>
+    <junit-plaform.version>5.6.0</junit-plaform.version>
   </properties>
 
   <dependencies>
@@ -55,6 +48,13 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
+      <version>5.6.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
       <version>5.6.0</version>
       <scope>test</scope>
     </dependency>
@@ -125,29 +125,29 @@
     </dependency>
   </dependencies>
 
-<!--  <build>-->
-<!--    &lt;!&ndash;<pluginManagement>&ndash;&gt;&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;-->
-<!--    <plugins>-->
+  <build>
+    <!--<pluginManagement>--><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <plugins>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.1.0</version>
+      </plugin>
+      <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+      </plugin>
 <!--      <plugin>-->
-<!--        <artifactId>maven-clean-plugin</artifactId>-->
-<!--        <version>3.1.0</version>-->
+<!--        <artifactId>maven-surefire-plugin</artifactId>-->
+<!--        <version>2.22.1</version>-->
+<!--        <configuration>-->
+<!--          &lt;!&ndash;                <failIfNoTests>false</failIfNoTests>&ndash;&gt;-->
+<!--        </configuration>-->
 <!--      </plugin>-->
-<!--      &lt;!&ndash; default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging &ndash;&gt;-->
-<!--      <plugin>-->
-<!--        <artifactId>maven-resources-plugin</artifactId>-->
-<!--        <version>3.0.2</version>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <artifactId>maven-compiler-plugin</artifactId>-->
-<!--        <version>3.8.0</version>-->
-<!--      </plugin>-->
-<!--&lt;!&ndash;      <plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;        <artifactId>maven-surefire-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;        <version>2.22.1</version>&ndash;&gt;-->
-<!--&lt;!&ndash;        <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;          &lt;!&ndash;                <failIfNoTests>false</failIfNoTests>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;        </configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;      </plugin>&ndash;&gt;-->
 <!--      <plugin>-->
 <!--        <artifactId>maven-surefire-plugin</artifactId>-->
 <!--        <version>2.22.1</version>-->
@@ -155,67 +155,38 @@
 <!--          <argLine>&#45;&#45;add-opens tasks/tasks.model=ALL-UNNAMED</argLine>-->
 <!--        </configuration>-->
 <!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-failsafe-plugin</artifactId>-->
-<!--        <version>2.22.1</version>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <artifactId>maven-jar-plugin</artifactId>-->
-<!--        <version>3.0.2</version>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <artifactId>maven-install-plugin</artifactId>-->
-<!--        <version>2.5.2</version>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <artifactId>maven-deploy-plugin</artifactId>-->
-<!--        <version>2.8.2</version>-->
-<!--      </plugin>-->
-<!--      &lt;!&ndash; site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle &ndash;&gt;-->
-<!--      <plugin>-->
-<!--        <artifactId>maven-site-plugin</artifactId>-->
-<!--        <version>3.7.1</version>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <artifactId>maven-project-info-reports-plugin</artifactId>-->
-<!--        <version>3.0.0</version>-->
-<!--      </plugin>-->
-
-<!--      <plugin>-->
-<!--        <groupId>org.codehaus.mojo</groupId>-->
-<!--        <artifactId>exec-maven-plugin</artifactId>-->
-<!--        <version>1.6.0</version>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <goals>-->
-<!--              <goal>java</goal>-->
-<!--            </goals>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--        <configuration>-->
-<!--          <mainClass>tasks.view.Main</mainClass>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
-
-<!--      </plugins>-->
-<!--      &lt;!&ndash;</pluginManagement>&ndash;&gt;-->
-
-<!--  </build>-->
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
-      </plugin>
-
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M5</version>
         <configuration>
           <useModulePath>false</useModulePath>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.22.1</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.5.2</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.2</version>
+      </plugin>
+      <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.7.1</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.0.0</version>
       </plugin>
 
       <plugin>
@@ -233,7 +204,10 @@
           <mainClass>tasks.view.Main</mainClass>
         </configuration>
       </plugin>
-    </plugins>
+
+      </plugins>
+      <!--</pluginManagement>-->
+
   </build>
 
   <pluginRepositories>
