@@ -36,7 +36,7 @@ public class Task implements Serializable, Cloneable {
         if (title == null || title.length() < 1 || title.length() > 255) {
             throw new IllegalArgumentException("Description must be between 1 and 255 characters.");
         }
-//        System.out.println(start);
+        System.out.println(start);
         if (start == null || start.before(new Date(946598400000L)) || start.after(new Date(1767225599999L))) { // 2000-01-01 to 2025-12-31
             System.out.println("Start" + start);
             throw new IllegalArgumentException("Start date must be between 2000-01-01 and 2025-12-31.");
