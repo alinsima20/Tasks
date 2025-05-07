@@ -22,3 +22,8 @@
 2025-04-03 21:18:06 INFO  Main:39 - application start
 2025-04-03 21:18:07 INFO  Controller:74 - Main controller initializing
 2025-04-03 21:18:11 INFO  NewEditController:89 - new/edit window initializing
+2025-05-08 00:31:26 INFO  Main:34 - saved data reading
+2025-05-08 00:31:26 ERROR TaskIO:72 - IO exception reading or writing file
+2025-05-08 00:31:26 INFO  Main:39 - application start
+2025-05-08 00:31:27 INFO  Controller:74 - Main controller initializing
+2025-05-08 00:31:34 INFO  NewEditController:89 - new/edit window initializing
