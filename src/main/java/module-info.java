@@ -6,6 +6,7 @@ module tasks {
 
 //    opens tasks.model to javafx.base;
     opens tasks.model to org.junit.platform.commons;
+    opens tasks.services to org.junit.platform.commons;
     exports tasks.model;
     opens tasks.view to javafx.fxml;
     exports tasks.view;
