@@ -2,14 +2,12 @@ package tasks.model;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ECP_BVATest {
+class ECPBVATest {
 
 //    private Task task;
 //
